@@ -15,7 +15,7 @@ class JPbuilderHandler
         end
         callback = params[:callback] || JPbuilderHandler.default_callback
         if callback.present?
-          "\#{callback}(\#{result});"
+          "\#{callback} \&\& \#{callback}(\#{result});"
         else
           result
         end
